@@ -2,11 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Abel Neczpal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <style>
+        html  {
+            background: url(img/DSC_0008.JPG) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
         body {
             margin: 0;
             padding: 0;
+            /*background-size: contain;*/
+            /*background: url("./img/IMG_1252.JPG") no-repeat;*/
+        }
+
+        .bg {
+            background-size: cover;
+            /*background: url("./img/IMG_1252.JPG") no-repeat center;*/
+
+            width: 100%;
+            height: 100%;
         }
 
         #live-background {
@@ -14,14 +32,131 @@
             height: 100%;
             margin: 0;
             padding: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+        a:hover {
+            color: darksalmon !important;
+        }
+
+        /*.lpk-live-photo-renderer {*/
+        /*    top: 0 !important;*/
+        /*    left: 0 !important;*/
+        /*    width: 100% !important;*/
+        /*    height: 100% !important;*/
+        /*    background-size: cover !important;*/
+        /*}*/
+        /*.lpk-render-layer {*/
+        /*    position: relative !important;*/
+        /*    top: 0 !important;*/
+        /*    left: 0 !important;*/
+        /*    width: 100% !important;*/
+        /*    height: 100% !important;*/
+        /*    background-size: cover !important;*/
+
+        /*}*/
+
+        .bgwidth { width: 100%; }
+        .bgheight { height: 100%; }
+        body {
+            /*background-image: url(ground.png);*/
+            /*background-color: #fc9838;*/
+            overflow: hidden;
+        }
+
+        .address {
+            font-style: normal;
+        }
+
+        .about {
+            position: absolute;
+            left: 20px;
+            top: 18px;
+            background-color: #FFFFFF66;
+            border: black 1px solid;
+            border-radius: 5px;
+            padding: 22px;
+        }
+
+        .about h1, .about h2, .about a {
+            font-family: sans-serif;
+            margin: 0px 0px 0px 0px;
+            text-decoration: none;
+            font-weight: bolder;
+            color: #000;
+        }
+
+        .about h1 {
+            font-weight: 400;
+            font-size: 2.3em;
+        }
+
+        .about h2 {
+            margin: 0px 0 0 2px;
+            font-style: italic;
+            font-weight: 100;
+            font-size: 0.8em;
+        }
+
+        .top {
+            /*background-image: url(surface.png);*/
+            /*background-color: #3cbcfc;*/
+            position: fixed;
+            height: 448px;
+            width: 100%;
+            left: 0px;
+            top: 0px;
+        }
+
+        .top .character {
+            /*background-image: url(character.gif);*/
+            height: 54px;
+            width: 46px;
+        }
+
+        .top .surface {
+            pointer-events: none;
+            position: absolute;
+            left: 0px;
+            top: 0px;
         }
     </style>
     <script src="https://cdn.apple-livephotoskit.com/lpk/1/livephotoskit.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div
-        id="live-background">
+<div class="top">
+    <div class="about">
+        <div class="address">
+            <h1>Abel Neczpal</h1>
+            <h2>
+                <a href="https://neczpal.github.io/cv/index.html">
+                    CV
+                </a>&nbsp;｜&nbsp;
+                <a href="mailto:neczpal@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>&nbsp;｜&nbsp;
+                <a href="https://github.com/neczpal">
+                    <i class="fab fa-github"></i>
+                </a>&nbsp;｜&nbsp;
+                <a href="https://www.instagram.com/neczpal">
+                    <i class="fab fa-instagram"></i>
+                </a>&nbsp;｜&nbsp;
+                <a href="https://www.linkedin.com/in/aneczpal">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </h2>
+        </div>
     </div>
+</div>
+<!--<div class="bg">-->
+
+</div>
+<!--    <div-->
+<!--        id="live-background">-->
+<!--    </div>-->
 <!--    <div-->
 <!--            id="live-background"-->
 <!--            data-live-photo-->
@@ -35,13 +170,37 @@
     <script>
         'use strict';
 
+        // $(window).on('load', function() {
+        //
+        //     var theWindow        = $(window),
+        //         $bg              = $("#live-background"),
+        //         aspectRatio      = $bg.width() / $bg.height();
+        //
+        //     function resizeBg() {
+        //
+        //         if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
+        //             $bg
+        //                 .removeClass()
+        //                 .addClass('bgheight');
+        //         } else {
+        //             $bg
+        //                 .removeClass()
+        //                 .addClass('bgwidth');
+        //         }
+        //
+        //     }
+        //     theWindow.resize(resizeBg).trigger("resize");
+        //
+        // });
+
+
         const body = document.body,
             html = document.documentElement;
 
         const height = Math.max( body.scrollHeight, body.offsetHeight,
             html.clientHeight, html.scrollHeight, html.offsetHeight );
 
-        body.style.height = height+"px";
+        // body.style.height = height+"px";
 
         document.addEventListener('DOMContentLoaded', (event) => {
             // Create the player using a pre-existing DOM element.
@@ -60,20 +219,20 @@
             // Listen to events the player emits.
             player.addEventListener('canplay', evt => console.log('player ready', evt));
             player.addEventListener('error', evt => console.log('player load error', evt));
-            player.addEventListener('ended', evt => console.log('player finished playing through', evt));
+            // player.addEventListener('ended', evt => {player.play(); console.log('player finished playing through', evt)});
             player.addEventListener('videoload', evt => console.log('video finished load', evt));
             player.addEventListener('photoload', evt => console.log('photo finished load', evt));
             // Use the playback controls.
-            player.playbackStyle = LivePhotosKit.PlaybackStyle.HINT;
-            player.playbackStyle = LivePhotosKit.PlaybackStyle.FULL;
-            player.play();
-            player.pause();
+            // player.playbackStyle = LivePhotosKit.PlaybackStyle.HINT;
+            // player.playbackStyle = LivePhotosKit.PlaybackStyle.FULL;
             player.toggle();
-            player.stop();
-            // Seek the animation to one quarter through.
-            player.currentTime = 0.25 * player.duration;
-            // Seek the animation to 0.1 seconds into the Live Photo.
-            player.currentTime = 0.1;
+            // player.pause();
+            // player.toggle();
+            // player.stop();
+            // // Seek the animation to one quarter through.
+            // player.currentTime = 0.25 * player.duration;
+            // // Seek the animation to 0.1 seconds into the Live Photo.
+            // player.currentTime = 0.1;
 
 
             //the event occurred
