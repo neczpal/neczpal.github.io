@@ -7,8 +7,59 @@
           integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
           crossorigin="anonymous"/>
     <style>
+        /* reset */
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        /* end of reset */
+
         html {
-            background: url(img/DSC_0008.JPG) no-repeat center center fixed;
+            background: url(img/bg_img_01.jpg) no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -18,66 +69,11 @@
         body {
             margin: 0;
             padding: 0;
-            /*background-size: contain;*/
-            /*background: url("./img/IMG_1252.JPG") no-repeat;*/
-        }
-
-        .bg {
-            background-size: cover;
-            /*background: url("./img/IMG_1252.JPG") no-repeat center;*/
-
-            width: 100%;
-            height: 100%;
-        }
-
-        #live-background {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            object-fit: cover;
+            overflow: hidden;
         }
 
         a:hover {
             color: darksalmon !important;
-        }
-
-        /*.lpk-live-photo-renderer {*/
-        /*    top: 0 !important;*/
-        /*    left: 0 !important;*/
-        /*    width: 100% !important;*/
-        /*    height: 100% !important;*/
-        /*    background-size: cover !important;*/
-        /*}*/
-        /*.lpk-render-layer {*/
-        /*    position: relative !important;*/
-        /*    top: 0 !important;*/
-        /*    left: 0 !important;*/
-        /*    width: 100% !important;*/
-        /*    height: 100% !important;*/
-        /*    background-size: cover !important;*/
-
-        /*}*/
-
-        .bgwidth {
-            width: 100%;
-        }
-
-        .bgheight {
-            height: 100%;
-        }
-
-        body {
-            /*background-image: url(ground.png);*/
-            /*background-color: #fc9838;*/
-            overflow: hidden;
-        }
-
-        .address {
-            font-style: normal;
         }
 
         .about {
@@ -92,7 +88,7 @@
 
         .about h1, .about h2, .about a {
             font-family: sans-serif;
-            margin: 0px 0px 0px 0px;
+            margin: 0 0 0 0;
             text-decoration: none;
             font-weight: bolder;
             color: #000;
@@ -104,62 +100,35 @@
         }
 
         .about h2 {
-            margin: 0px 0 0 2px;
+            margin: 0 0 0 2px;
             font-style: italic;
             font-weight: 100;
             font-size: 0.8em;
-        }
-
-        .top {
-            /*background-image: url(surface.png);*/
-            /*background-color: #3cbcfc;*/
-            position: fixed;
-            height: 448px;
-            width: 100%;
-            left: 0px;
-            top: 0px;
-        }
-
-        .top .character {
-            /*background-image: url(character.gif);*/
-            height: 54px;
-            width: 46px;
-        }
-
-        .top .surface {
-            pointer-events: none;
-            position: absolute;
-            left: 0px;
-            top: 0px;
         }
     </style>
 
 
 </head>
 <body>
-    <div class="top">
-        <div class="about">
-            <div class="address">
-                <h1>Abel Neczpal</h1>
-                <h2>
-                    <a href="https://neczpal.github.io/cv/index.html">
-                        CV
-                    </a>&nbsp;｜&nbsp;
-                    <a href="mailto:neczpal@gmail.com">
-                        <i class="fas fa-envelope"></i>
-                    </a>&nbsp;｜&nbsp;
-                    <a href="https://github.com/neczpal">
-                        <i class="fab fa-github"></i>
-                    </a>&nbsp;｜&nbsp;
-                    <a href="https://www.instagram.com/neczpal">
-                        <i class="fab fa-instagram"></i>
-                    </a>&nbsp;｜&nbsp;
-                    <a href="https://www.linkedin.com/in/aneczpal">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </h2>
-            </div>
-        </div>
+    <div class="about">
+        <h1>Abel Neczpal</h1>
+        <h2>
+            <a href="https://neczpal.github.io/cv/index.html">
+                CV
+            </a>&nbsp;｜&nbsp;
+            <a href="mailto:neczpal@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>&nbsp;｜&nbsp;
+            <a href="https://github.com/neczpal">
+                <i class="fab fa-github"></i>
+            </a>&nbsp;｜&nbsp;
+            <a href="https://www.instagram.com/neczpal">
+                <i class="fab fa-instagram"></i>
+            </a>&nbsp;｜&nbsp;
+            <a href="https://www.linkedin.com/in/aneczpal">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </h2>
     </div>
 </body>
 </html>
