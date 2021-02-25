@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="author" content="Neczpál Ábel">
+    <meta name="keywords" content="neczpal, abel, neczpál, ábel">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+          integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+          crossorigin="anonymous"/>
+    <style>
+        /* reset */
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        /* end of reset */
+
+        body {
+            /*font: normal normal 400;*/
+            font-size: 80%;
+            line-height: 1.5em;
+            font-family: Verdana, sans-serif;
+            margin-top: 1em;
+            margin-left: 1em;
+        }
+
+        p {
+            position: relative;
+            left: 33%;
+            margin-bottom: 0.7em;
+            margin-right: 0;
+            width: 65%;
+            text-align: justify;
+        }
+
+        code {
+            /*font: normal normal;*/
+            font-size: 80%;
+            font-family: Menlo, monospace, sans-serif;
+            color: #aaa;
+        }
+
+        p code {
+            position: absolute;
+            left: -22%;
+        }
+
+        ul {
+            position: relative;
+            left: 33%;
+            width: 65%;
+            margin-bottom: 1.5em;
+            /*margin-top: -0.5em;*/
+        }
+
+        li {
+            padding-left: 0;
+            text-indent: 0;
+        }
+
+        li ul {
+            position: relative;
+            left: 0;
+            width: 100%;
+            margin-top: 0.25em;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 400;
+            font-family: Cousine, Verdana, sans-serif;
+            width: 65%;
+        }
+
+        h2, h3, h4 {
+            font-variant: all-small-caps;
+        }
+
+        h1 {
+            text-align: left;
+            font-size: 3em;
+            line-height: 1em;
+            position: relative;
+            left: 33%;
+        }
+
+        h1 + p {
+            font-style: italic;
+            font-size: 110%;
+        }
+
+        h2 {
+            font-size: 1.3em;
+            margin-top: 1.5em;
+            position: relative;
+            color: #333333;
+            top: 1.4em;
+            text-align: right;
+            width: 10%;
+        }
+
+        h3 {
+            margin-top: 2.25em;
+            font-size: 1.15em;
+            line-height: 2em;
+            position: relative;
+            top: 1.7em;
+            text-align: right;
+            width: 20%;
+        }
+
+        h4 {
+            margin-top: 0;
+            font-size: 1.0em;
+            line-height: 1em;
+            position: relative;
+            top: 1em;
+            text-align: right;
+            width: 30%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration-line: none;
+        }
+
+        a:hover {
+            color: #39f;
+        }
+
+        em {
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        .inline-list {
+            margin-right: 0;
+        }
+
+        .inline-list li {
+            display: inline;
+        }
+
+        .skill li:before {
+            content: "| ";
+        }
+
+        .skill li:first-child:before {
+            content: "";
+        }
+
+        .language li:before {
+            content: "— ";
+        }
+
+        .language li:first-child:before {
+            content: "";
+        }
+
+        .entry li:first-child {
+            font-family: monospace;
+            font-style: italic;
+            color: #999999;
+            position: absolute;
+            left: -22%;
+        }
+
+        .entry li:nth-child(2) {
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: right;
+        }
+
+        #download {
+            position: absolute;
+            width: 64px;
+            height: 64px;
+            right: 20px;
+            top: 20px;
+        }
+
+        @media print {
+            #about {
+                page-break-after: always;
+            }
+
+            #download {
+                display: none;
+            }
+        }
+
+    </style>
+    <title>Ábel Neczpál's CV</title>
+</head>
+<body>
+<h1>Ábel Neczpál</h1>
+<div id="download">
+    <a href="Abel Neczpal's CV.pdf" download>
+        <i class="fas fa-save" style="font-size: xxx-large"></i>
+    </a>
+</div>
+
+<!-- ABOUT -->
+<div id="about">
+    <h2>About</h2>
+    <ul>
+        <li>
+            <a href="mailto:neczpal@gmail.com">
+                <i class="fas fa-envelope"></i>
+                neczpal@gmail.com
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/neczpal">
+                <i class="fab fa-github"></i>
+                github.com/neczpal
+            </a>
+        </li>
+        <li>
+            <a href="https://linkedin.com/in/aneczpal/">
+                <i class="fab fa-linkedin"></i>
+                linkedin.com/in/aneczpal/
+            </a>
+        </li>
+    </ul>
+    <p>
+        I was born in Budapest in 1995. I got involved with web development in my late elementary years when I
+        wanted to make dynamic websites. Therefore I read a book about PHP and started developing my own website.
+        Later I got involved with Java and that is how I started to form more object-oriented mindset.
+    </p>
+    <p>
+        I went to a high school that had IT faculty. I was taught the basic concepts of programming through
+        the use of C++ language. I was learning plenty of algorithms and the mindset of
+        solving issues in a pragmatic way. With one of my classmates, we had the opportunity to work with IT Group Kft.
+        on a project. My job was to develop an Android database viewer application for security patrol car tablets while
+        he created the editor tool. At the end of high school, I participated in the finals of the National High
+        School Competition (OKTV) and reached 32nd place in the programming category.
+    </p>
+    <p>
+        After achieving an excellent school-leaving certificate, I went to study computer engineering in Budapest
+        University of Technology and Economics, where I got more
+        in-depth knowledge about the fields I was interested in. As time went by I had an opportunity to work as a
+        trainee with a multinational company called Graphisoft. This was a change I always wanted to make because I
+        wanted to try myself as a mobile developer. Here I was able to expand my Android knowledge by working on their
+        professional-grade 3D model viewer application.
+    </p>
+    <p>
+        Later I joined another workplace where we developed RESTful applications on Java EE environment with a small
+        group using agile methodology. It was engaging to complete projects where you plan the whole architecture from
+        database structures to the outfit of the website. As time went by, it started to seem like my university
+        education had less and less to offer so I decided to quit and started working as a freelancer with Antlify
+        creating webpages for clients all around the globe.
+    </p>
+    <p>
+        I am an open-minded person, who likes learning and using new technologies in order to perform better. I
+        always take the engineering approach, designing everything ahead to avoid later issues. Whether you are looking
+        for a web developer or an ambitious software developer, feel free to contact me with the details.
+    </p>
+</div>
+
+<!-- EXPERIENCES -->
+<div id="experiences">
+    <div>
+        <h2>Experiences</h2>
+        <ul>
+            <li>
+                <ul class="entry">
+                    <li>2019 - 2021</li>
+                    <li><a href="https://www.antlify.hu">Antlify</a></li>
+                    <li>Web developer</li>
+                </ul>
+            </li>
+            <li>
+                <ul class="entry">
+                    <li>2017 - 2018</li>
+                    <li><a href="https://alerant.hu">Alerant</a></li>
+                    <li>Java EE fullstack developer</li>
+                </ul>
+            </li>
+            <li>
+                <ul class="entry">
+                    <li>2016 - 2017</li>
+                    <li><a href="https://graphisoft.com/">Graphisoft SE</a></li>
+                    <li>Android developer trainee</li>
+                </ul>
+            </li>
+            <li>
+                <ul class="entry">
+                    <li>2016</li>
+                    <li><a href="https://ponte.hu/">Ponte.hu</a></li>
+                    <li>Java developer</li>
+                </ul>
+            </li>
+            <li>
+                <ul class="entry">
+                    <li>2014</li>
+                    <li><a href="https://itgroup.hu/">IT Group Kft.</a></li>
+                    <li>Android developer</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- EDUCATION -->
+<div id="education">
+    <h2>Education</h2>
+    <ul>
+        <li>
+            <ul class="entry">
+                <li>2015 - (2019)</li>
+                <li>Budapest University of Technology and Economics</li>
+                <li>Computer Software Engineer BA</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<!-- PROJECTS -->
+<div id="projects">
+    <h2>Projects</h2>
+    <ul>
+        <li>
+            <ul class="entry">
+                <li>2018 -</li>
+                <li><a href="https://github.com/neczpal/bj-counter">Blackjack Counter</a></li>
+                <li>A blackjack card counter and simulator console program</li>
+            </ul>
+        </li>
+        <li>
+            <ul class="entry">
+                <li>2016 -</li>
+                <li><a href="https://github.com/neczpal/interstellar-war">Interstellar War</a></li>
+                <li>Client-server multiplatform multiplayer game application</li>
+            </ul>
+        </li>
+        <li>
+            <ul class="entry">
+                <li>2016</li>
+                <li><a href="https://github.com/neczpal/zombie-survival">Zombie Survival</a></li>
+                <li>2D tile based survival game with clever AI enemies.</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div id="computer-techs">
+    <h2>Skills</h2>
+    <!-- Programming languages -->
+    <ul class="inline-list skill">
+        <li>Java</li>
+        <li>JavaScript</li>
+        <li>PHP</li>
+        <li>SQL</li>
+        <li>C++</li>
+        <li>C</li>
+        <li>Swift</li>
+        <li>C#</li>
+    </ul>
+    <!-- Web technologies -->
+    <ul class="inline-list skill">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>React</li>
+        <li>Angular</li>
+        <li>Bootstrap</li>
+    </ul>
+    <!-- Environments -->
+    <ul class="inline-list skill">
+        <li>Jetbrains IDE's</li>
+        <li>Eclipse</li>
+        <li>Xcode</li>
+        <li>Visual Studio</li>
+    </ul>
+    <!-- Operating systems -->
+    <ul class="inline-list skill">
+        <li>macOS</li>
+        <li>Linux</li>
+        <li>Windows</li>
+        <li>Android</li>
+        <li>iOS</li>
+    </ul>
+    <!-- Version control systems -->
+    <ul class="inline-list skill">
+        <li>Git</li>
+        <li>Subversion</li>
+        <li>Perforce</li>
+    </ul>
+</div>
+
+<!-- KNOWLEDGE -->
+<div id="languages">
+    <h2>Languages</h2>
+    <ul>
+        <li>
+            <ul class="inline-list language">
+                <li>English</li>
+                <li>fluent (B2)</li>
+            </ul>
+        </li>
+        <li>
+            <ul class="inline-list language">
+                <li>German</li>
+                <li>intermediate (B2)</li>
+            </ul>
+        </li>
+        <li>
+            <ul class="inline-list language">
+                <li>Hungarian</li>
+                <li>native</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<!-- FOOTER -->
+<footer id="footer">
+    <p class="footer">2021 Feb</p>
+</footer>
+
+</body>
+</html>
